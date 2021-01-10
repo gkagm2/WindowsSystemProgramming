@@ -35,7 +35,8 @@ int _tmain(int argc, TCHAR* argv[]) {
 	CloseHandle(pi1.hThread);
 	CloseHandle(pi2.hThread);
 
-	// 자식 프로세스가 signaled(종료)상태가 될때까지 기다림
+	// 부모 프로세스는 자식 프로세스가 종료 될 때까지 기다려 주는 효과.
+	// 자식 프로세스가 signaled(종료)상태가 될때까지 이 함수의 호출은 블로킹 상태가 됨.
 	WaitForSingleObject(pi1.hProcess, INFINITE); 
 	WaitForSingleObject(pi2.hProcess, INFINITE);
 
