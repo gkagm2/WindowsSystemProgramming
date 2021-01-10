@@ -52,6 +52,10 @@ int _tmain(int argc, TCHAR* argv[]) {
 			CreateProcess(
 				NULL, command, NULL, NULL,
 				TRUE, 0, NULL, NULL, &si, &pi);
+
+			// 남은 Usage count를 없애기 위해 추가
+			CloseHandle(pi.hProcess);
+			CloseHandle(pi.hThread);
 			break;
 		}
 	}
