@@ -3,7 +3,7 @@
 #include <tchar.h>
 #include <Windows.h>
 
-#define SLOT_NAME _T(".\\mailslot\\mailbox")
+#define SLOT_NAME _T("\\\\.\\mailslot\\mailbox")
 
 int _tmain(int argc, TCHAR* argv[]) {
 	HANDLE hMailSlot; // mailslot handle
